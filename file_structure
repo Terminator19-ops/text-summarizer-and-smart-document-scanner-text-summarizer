@@ -1,0 +1,36 @@
+smartscanner/
+├── manage.py
+├── smartscanner/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── webui/
+│   ├── __init__.py
+│   ├── urls.py                  ← Handles web routing
+│   ├── views.py                 ← All logic triggers here
+│   ├── templates/
+│   │   └── webui/
+│   │       ├── upload.html      ← Upload/capture UI
+│   │       └── result.html      ← Displays extracted data
+│   ├── static/                  ← Optional CSS/JS if needed
+│   │   └── styles.css
+│   └── forms.py                 ← Upload form (if needed)
+├── preprocessing/
+│   ├── __init__.py
+│   └── image_cleaner.py         ← Resize, binarize, threshold, etc.
+├── classification/
+│   ├── __init__.py
+│   └── handwriting_detector.py  ← Typed vs handwritten logic
+├── doc_type_classifier/
+│   ├── __init__.py
+│   └── type_classifier.py       ← Resume, bill, invoice, etc.
+├── summarizer/
+│   ├── __init__.py
+│   └── text_summarizer.py       ← Abstractive summarizer (T5/BART etc.)
+├── ocr_engine/
+│   ├── __init__.py
+│   └── trocr_ocr.py             ← OCR logic using TrOCR
+├── media/
+│   └── scanned_docs/            ← Uploaded/captured files stored here
+└── requirements.txt
